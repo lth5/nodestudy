@@ -1,0 +1,7 @@
+<% include ./head.html %>
+<div class="main">
+</div>
+<% _JS.forEach(function(js) { %>
+    <script type="text/javascript" src="<%= js %>"></script>
+<% }) %>
+<% include ./foot.html %>
