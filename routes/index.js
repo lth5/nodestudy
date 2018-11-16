@@ -7,7 +7,7 @@ router.get('/', function (req, res) {
   res._CSS = ['js/index']
   res._JS = ['js/index']
   res.assets = true;
-  res.render('index')
+  res.render('html/index')
 })
 router.use('/users', userRouter)
 
