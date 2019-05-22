@@ -4,6 +4,7 @@ const indexRouter = require('./routes/index')
 const ejs = require('ejs')
 
 app.use('/', indexRouter)
+app.use(express.static('public'))
 app.engine('html',ejs.__express);
 app.set('view engine', 'html');
 const server = app.listen(3000,()=>{
