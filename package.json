@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "supervisor app"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lth5/nodestudy.git"
@@ -27,6 +26,7 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "redux": "^4.0.1"
   }
 }
