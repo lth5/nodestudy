@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "supervisor app"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lth5/nodestudy.git"
@@ -20,7 +19,9 @@
   "homepage": "https://github.com/lth5/nodestudy#readme",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "react": "^17.0.2",
+    "webpack": "^5.45.1"
   },
   "devDependencies": {
     "eslint-config-standard": "^11.0.0",

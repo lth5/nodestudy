@@ -1,8 +1,51 @@
-<% include ./head.html %>
-<div class="main">
-    index
-    sgagsgsag
-    <br>
-    <img src="./imgs/web-title.jpg" alt="wwww">
-</div>
-<% include ./foot.html %>
+<head>
+    <title>servicework</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <!-- <link rel="manifest" href="manifest.json"> -->
+  </head>
+  <body>
+    <div class="revision">servicework</div>
+    <img src="pwa-fonts.png">
+    <!-- <div class="main-text">
+      Minimal PWA, open Console for more!
+    </div> -->
+    <div class="network-message">
+      Network:
+      <span id="network-status" class="">Good</span>
+    </div>
+    <div>
+      <button id="unregister-btn">取消注册sw</button>
+    </div>
+    <script>
+        console.log('执行script')
+        var swRegistration;
+        if (navigator.serviceWorker != null) {
+          navigator.serviceWorker.register('servicework.js',{ scope: './'})
+          .then(function(registration) {
+            console.log('Registered events at scope:注册完s s成 ', registration.scope);
+            // setInterval(function() {
+            //   console.log('setInterval');
+            //   registration.update();
+            // }, 4000);
+            swRegistration = registration;
+          });
+        }else{
+            console.log('俺现在还不支持serviceWorker')
+        }
+        fetch('data.json')
+
+        var statusEl = document.querySelector('#network-status')
+        var unregisterBtn = document.querySelector('#unregister-btn')
+        if (!navigator.onLine) {
+          statusEl.classList = ['is-offline']
+          statusEl.innerText = 'Offline'
+        }
+        unregisterBtn.onclick = function () {
+          swRegistration.unregister().then(function(boolean) {
+            // if boolean = true, unregister is successful
+            console.log('unregister:' ,boolean)
+          });
+        }
+      </script>
+  </body>

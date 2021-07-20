@@ -4,11 +4,18 @@ const userRouter = require('./users')
 const kuayuRouter = require('./kuayu')
 
 router.get('/', function (req, res) {
-  res.pageTitle = '车辆列表'
+  res.pageTitle = 'service work'
   res._CSS = ['js/index']
   res._JS = ['js/index']
   res.assets = true;
   res.render('html/index')
+})
+router.get('/workbox', function (req, res) {
+  res.pageTitle = 'work box'
+  res._CSS = ['js/index']
+  res._JS = ['js/index']
+  res.assets = true;
+  res.render('html/workbox')
 })
 router.use('/users', userRouter)
 router.use('/kuayu', kuayuRouter)
