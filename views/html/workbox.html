@@ -1,12 +1,14 @@
 <head>
     <title>workbox</title>
     <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="styles/workbox.css">
     <!-- <link rel="manifest" href="manifest.json"> -->
   </head>
   <body>
     <div class="revision">workbox</div>
-    <img src="pwa-fonts.png">
+    <img width="200px" src="/imgs/logo.jpeg">
+    <img width="200px" src="imgs/pwa-fonts.png">
+    <img width="200px" src="imgs/mouse.jpeg">
     <!-- <div class="main-text">
       Minimal PWA, open Console for more!
     </div> -->
@@ -21,7 +23,7 @@
       console.log('执行workbox--script')
       var swRegistration;
       if (navigator.serviceWorker != null) {
-        navigator.serviceWorker.register('./js/workbox.js',{scope: './workbox'})
+        navigator.serviceWorker.register('workbox-sw.js',{scope: './workbox'})
         .then(function(registration) {
           console.log('Registered events at scope:注册完s s成 ', registration.scope);
           swRegistration = registration;

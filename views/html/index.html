@@ -1,12 +1,11 @@
 <head>
     <title>servicework</title>
     <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <!-- <link rel="manifest" href="manifest.json"> -->
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
   </head>
   <body>
     <div class="revision">servicework</div>
-    <img src="pwa-fonts.png">
+    <img src="imgs/pwa-fonts.png">
     <!-- <div class="main-text">
       Minimal PWA, open Console for more!
     </div> -->
@@ -21,12 +20,14 @@
         console.log('执行script')
         var swRegistration;
         if (navigator.serviceWorker != null) {
-          navigator.serviceWorker.register('servicework.js',{ scope: './'})
+          // navigator.serviceWorker.register('sw.js',{scope: './sw1'})
+          navigator.serviceWorker.register('sw.js',{scope: './'})
+          // navigator.serviceWorker.register('sw.js',{scope: './'})
           .then(function(registration) {
             console.log('Registered events at scope:注册完s s成 ', registration.scope);
             // setInterval(function() {
             //   console.log('setInterval');
-            //   registration.update();
+            //   // registration.update();
             // }, 4000);
             swRegistration = registration;
           });

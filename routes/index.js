@@ -10,6 +10,20 @@ router.get('/', function (req, res) {
   res.assets = true;
   res.render('html/index')
 })
+router.get('/sw1', function (req, res) {
+  res.pageTitle = 'service work'
+  res._CSS = ['js/index']
+  res._JS = ['js/index']
+  res.assets = true;
+  res.render('html/index')
+})
+router.get('/sw2', function (req, res) {
+  res.pageTitle = 'service work'
+  res._CSS = ['js/index']
+  res._JS = ['js/index']
+  res.assets = true;
+  res.render('html/sw2')
+})
 router.get('/workbox', function (req, res) {
   res.pageTitle = 'work box'
   res._CSS = ['js/index']

@@ -1,13 +1,14 @@
 
 console.log('Script loaded!')
-var cacheStorageKey = 'minimal-pwa-3'
+var cacheStorageKey = 'sw1-1'
 
 var cacheList = [
   '/',
-  './workbox',
-  "main.css",
-  "e.png",
-  "pwa-fonts.png"
+  './sw1',
+  './sw2',
+  "./styles/main.css",
+  "./imgs/e.png",
+  "./imgs/pwa-fonts.png"
 ]
 
 self.addEventListener('install', function(e) {
@@ -18,7 +19,7 @@ self.addEventListener('install', function(e) {
       return cache.addAll(cacheList)
     }).then(function() {
       console.log('Skip waiting!')
-      return self.skipWaiting()
+      // return self.skipWaiting()
     })
   )
 })
@@ -29,7 +30,7 @@ self.addEventListener('activate', function(e) {
   e.waitUntil(
       caches.keys().then(cacheNames => {
         return cacheNames.map(name => {
-          if (name !== cacheStorageKey) {
+          if (name !== cacheStorageKey && name !== cacheStorageKey && name[2] == '1') {
             return caches.delete(name)
           }
           return name;
@@ -53,4 +54,5 @@ self.addEventListener('fetch', function(e) {
       return fetch(e.request.url)
     })
   )
+   
 })
